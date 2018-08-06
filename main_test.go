@@ -1,11 +1,27 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
 
+func TestInvalidCommand1(t *testing.T) {
+	InputStdin := `
+ALEJO LOAIZA COMMAND
+`
+	processLines(strings.NewReader(InputStdin))
+
+	_, err := processCommands([]string{"MOVE"})
+	if err == nil {
+		t.Fail()
+	}
+}
+func TestInvalidCommand2(t *testing.T) {
+	_, err := processCommands([]string{"move"})
+	if err != nil {
+		t.Fail()
+	}
+}
 func TestCaseReport(t *testing.T) {
 	InputStdin := `
 REPORT
@@ -13,11 +29,9 @@ PLACE 1,1,NORTH
 REPORT
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err != nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 }
 func TestPositiveCasePlace(t *testing.T) {
@@ -25,11 +39,9 @@ func TestPositiveCasePlace(t *testing.T) {
 LEFT
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"PLACE", "1,1,NORTH"})
-	fmt.Println(err)
 	if err != nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -38,11 +50,9 @@ func TestNegativeCasePlace1(t *testing.T) {
 LEFT
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"PLACE", "5,4,NORTH"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -52,11 +62,9 @@ func TestNegativeCasePlace2(t *testing.T) {
 LEFT
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"PLACE", "A,4,NORTH"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -66,11 +74,9 @@ func TestNegativeCasePlace3(t *testing.T) {
 LEFT
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"PLACE", "3,B,NORTH"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -80,11 +86,9 @@ func TestNegativeCasePlace4(t *testing.T) {
 LEFT
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"PLACE", "3,3,NORT"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -98,11 +102,9 @@ MOVE
 MOVE
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -114,11 +116,9 @@ MOVE
 MOVE
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err != nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -132,11 +132,9 @@ MOVE
 MOVE
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -148,11 +146,9 @@ MOVE
 MOVE
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err != nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -164,11 +160,9 @@ MOVE
 MOVE
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err != nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
@@ -180,11 +174,9 @@ MOVE
 MOVE
 `
 	processLines(strings.NewReader(InputStdin))
-
 	_, err := processCommands([]string{"MOVE"})
-	fmt.Println(err)
 	if err == nil {
-		t.Error("Error position is invalid!")
+		t.Fail()
 	}
 
 }
