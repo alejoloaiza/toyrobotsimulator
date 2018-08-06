@@ -40,7 +40,7 @@ REPORT
 **Expected output:**
 Output: 4, 0, EAST
 
-**Dataset 3:**
+**Dataset 3:**      
 PLACE 3,0,EAST      
 MOVE        
 MOVE        
@@ -52,7 +52,7 @@ REPORT
 **Expected output:**
 Output: 4, 0, EAST 
 
-**Dataset 4:**
+**Dataset 4:**      
 PLACE 3,0,WEST      
 MOVE        
 MOVE        
@@ -60,7 +60,7 @@ REPORT
 **Expected output:**
 Output: 1, 0, WEST
 
-**Dataset 5:**
+**Dataset 5:**      
 PLACE 3,0,WEST      
 MOVE        
 MOVE        
@@ -69,7 +69,7 @@ REPORT
 **Expected output:**
 Output: 1, 0, SOUTH
 
-**Dataset 6:**
+**Dataset 6:**      
 PLACE 0,0,NORTH     
 LEFT        
 LEFT        
@@ -79,7 +79,7 @@ REPORT
 **Expected output:**
 Output: 0, 0, NORTH
 
-**Dataset 7:**
+**Dataset 7:**      
 PLACE 0,0,NORTH     
 RIGHT       
 RIGHT       
@@ -88,7 +88,7 @@ REPORT
 **Expected output:**
 Output: 0, 0, WEST
 
-**Dataset 8:**
+**Dataset 8:**      
 PLACE 0,0,NORTH     
 MOVE        
 RIGHT       
