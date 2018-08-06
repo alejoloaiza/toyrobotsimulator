@@ -13,20 +13,20 @@ Go to the path:
 `cd $GOPATH/src/github.com/alejoloaiza/toyrobotsimulator`
 
 
-##Run tests and show coverage:
+## Run tests and show coverage:
 
 `go test -cover`
 
-##Execute the program and run test data:
+## Execute the program and run test data:
 `go run main.go`
 
-#Test data:
+# Test data:
 
 **Dataset 1:**
-PLACE 1,1,NORTH
-MOVE
+PLACE 1,1,NORTH     
 MOVE        
-REPORT
+MOVE        
+REPORT      
 **Expected output:**
 Output: 1, 3, NORTH
 
